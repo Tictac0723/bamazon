@@ -10,7 +10,6 @@ var connection = mysql.createConnection({
 var itemId = "";
 var stock = "";
 var howMany = "";
-var price = "";
 
 connection.connect(function(error) {
     if (error) throw error;
@@ -46,7 +45,7 @@ function productId() {
             }
         }
     }]).then(function(answer) {
-    	price = answer.price;
+        console.log(answer);
         itemId = answer.id;
         inquirer.prompt([{
             name: "howMany",
@@ -63,10 +62,10 @@ function productId() {
 
 
         }]).then(function(answer) {
-            console.log("You owe $ " + howMany * price);
             connection.query(
                 "SELECT * FROM products WHERE item_id=?", [itemId],
                 function(err, res) {
+                    console.log("You owe $" + answer.howMany * res[0].price);
                     stock = res[0].stock_quantity;
                     if (stock >= answer.howMany) {
                         howMany = answer.howMany;
