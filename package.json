@@ -1,0 +1,26 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "The bamazon homework ",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tictac0723/bamazon.git"
+  },
+  "keywords": [
+    "bam"
+  ],
+  "author": "Taylor Clark",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tictac0723/bamazon/issues"
+  },
+  "homepage": "https://github.com/Tictac0723/bamazon#readme",
+  "dependencies": {
+    "inquirer": "^3.2.1",
+    "mysql": "^2.13.0"
+  }
+}
